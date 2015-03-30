@@ -8,7 +8,7 @@ import com.android.volley.Response;
  * Created by sow.m on 2015/03/27.
  */
 public class GsonRequest<T> extends Request {
-    
+
     public GsonRequest(int method, String url, Response.ErrorListener listener) {
         super(method, url, listener);
     }
