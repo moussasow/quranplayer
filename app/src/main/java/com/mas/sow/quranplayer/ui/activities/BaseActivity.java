@@ -1,20 +1,40 @@
 package com.mas.sow.quranplayer.ui.activities;
 
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.mas.sow.quranplayer.R;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 /**
  * Created by Sow on 2015/03/08.
  */
 public class BaseActivity extends ActionBarActivity {
 
+    @InjectView(R.id.toolbar_main) Toolbar mToolbar;
+    @InjectView(R.id.navigation_drawer) DrawerLayout mDrawerLayout;
+
+    protected void InjectButterKnife(){
+        ButterKnife.inject(this);
+    }
+
     protected void setToolBar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);  
-        setSupportActionBar(toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+    }
+
+    protected void setNavigationDrawer(){
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout,mToolbar, R.string.app_name, R.string.app_name);
+        mDrawerLayout.setDrawerListener(toggle);
     }
 
     @Override
