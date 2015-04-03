@@ -17,6 +17,7 @@ public class MainActivity extends BaseActivity {
         InjectButterKnife();
         setToolBar();
         setNavigationDrawer();
+        setViewPager();
     }
 
 

@@ -2,6 +2,7 @@ package com.mas.sow.quranplayer.ui.activities;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,6 +22,7 @@ public class BaseActivity extends ActionBarActivity {
 
     @InjectView(R.id.toolbar_main) Toolbar mToolbar;
     @InjectView(R.id.navigation_drawer) DrawerLayout mDrawerLayout;
+    @InjectView(R.id.view_pager) ViewPager mViewPager;
 
     protected void InjectButterKnife(){
         ButterKnife.inject(this);
@@ -35,6 +37,10 @@ public class BaseActivity extends ActionBarActivity {
     protected void setNavigationDrawer(){
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout,mToolbar, R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(toggle);
+    }
+
+    protected void setViewPager(){
+
     }
 
     @Override
