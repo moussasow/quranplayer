@@ -35,8 +35,14 @@ public class BaseActivity extends ActionBarActivity {
     }
 
     protected void setNavigationDrawer(){
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout,mToolbar, R.string.app_name, R.string.app_name);
+        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout,mToolbar, R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(toggle);
+        mDrawerLayout.post( new Runnable() {
+            @Override
+            public void run() {
+                toggle.syncState();
+            }
+        });
     }
 
     protected void setViewPager(){
