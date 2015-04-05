@@ -1,7 +1,6 @@
 package com.mas.sow.quranplayer.ui.activities;
 
-import android.os.Bundle;
-import android.os.PersistableBundle;
+
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -11,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.mas.sow.quranplayer.R;
+import com.mas.sow.quranplayer.ui.fragments.NavDrawerFragment;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -20,32 +20,31 @@ import butterknife.InjectView;
  */
 public class BaseActivity extends ActionBarActivity {
 
-    @InjectView(R.id.toolbar_main) Toolbar mToolbar;
-    @InjectView(R.id.navigation_drawer) DrawerLayout mDrawerLayout;
-    @InjectView(R.id.view_pager) ViewPager mViewPager;
+    @InjectView(R.id.toolbar_main)
+    Toolbar mToolbar;
+    @InjectView(R.id.navigation_drawer)
+    DrawerLayout mDrawerLayout;
+    @InjectView(R.id.view_pager)
+    ViewPager mViewPager;
 
-    protected void InjectButterKnife(){
+    protected void InjectButterKnife() {
         ButterKnife.inject(this);
     }
 
-    protected void setToolBar(){
+    protected void setAppBar() {
+        setToolBar();
+    }
+
+    private void setToolBar() {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        NavDrawerFragment fragment = (NavDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.left_drawer);
+        fragment.setupDrawer( mDrawerLayout, mToolbar, R.id.left_drawer);
     }
 
-    protected void setNavigationDrawer(){
-        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout,mToolbar, R.string.app_name, R.string.app_name);
-        mDrawerLayout.setDrawerListener(toggle);
-        mDrawerLayout.post( new Runnable() {
-            @Override
-            public void run() {
-                toggle.syncState();
-            }
-        });
-    }
 
-    protected void setViewPager(){
+    protected void setViewPager() {
 
     }
 
