@@ -31,11 +31,7 @@ public class BaseActivity extends ActionBarActivity {
         ButterKnife.inject(this);
     }
 
-    protected void setAppBar() {
-        setToolBar();
-    }
-
-    private void setToolBar() {
+    protected void setToolBar() {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);

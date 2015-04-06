@@ -1,33 +1,38 @@
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/navigation_drawer"
-    android:fitsSystemWindows="true">
+    android:orientation="vertical">
 
-    <FrameLayout
+    <include layout="@layout/app_bar" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/navigation_drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <include layout="@layout/app_bar"/>
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
 
-         </android.support.v4.view.ViewPager>
+            </android.support.v4.view.ViewPager>
 
 
-     </FrameLayout>
+        </FrameLayout>
 
-    <fragment
-        android:id="@+id/left_drawer"
-        android:layout_width="240dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:name="com.mas.sow.quranplayer.ui.fragments.NavDrawerFragment"
-        tools:layout="@layout/fragment_nav_drawer" />
+        <fragment
+            android:id="@+id/left_drawer"
+            android:name="com.mas.sow.quranplayer.ui.fragments.NavDrawerFragment"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            tools:layout="@layout/fragment_nav_drawer" />
 
-</android.support.v4.widget.DrawerLayout>
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>
