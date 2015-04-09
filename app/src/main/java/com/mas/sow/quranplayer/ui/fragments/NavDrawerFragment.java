@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mas.sow.quranplayer.R;
+import com.mas.sow.quranplayer.ui.adapter.DrawerAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +25,7 @@ public class NavDrawerFragment extends Fragment {
     private View mDrawerView;
     private boolean mDrawerUserLearned;
     private RecyclerView mRecyclerView;
+    private DrawerAdapter mDrawerAdapter;
 
     public NavDrawerFragment() {
         // Required empty public constructor
@@ -37,6 +39,8 @@ public class NavDrawerFragment extends Fragment {
         View layout = inflater.inflate(R.layout.fragment_nav_drawer, container, false);
         mRecyclerView = (RecyclerView) layout.findViewById(R.id.recyclerview_drawer);
         mRecyclerView.setLayoutManager( new LinearLayoutManager(getActivity()));
+        mDrawerAdapter = new DrawerAdapter( getActivity() );
+        mRecyclerView.setAdapter(mDrawerAdapter);
         return layout;
     }
 
