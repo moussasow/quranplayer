@@ -9,9 +9,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/harama"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="48dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_drawer"

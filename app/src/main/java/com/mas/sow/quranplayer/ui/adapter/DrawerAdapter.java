@@ -33,7 +33,7 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.DrawerHold
 
     @Override
     public void onBindViewHolder(DrawerHolder holder, int position) {
-        holder.mDrawerIcon.setImageResource(R.drawable.abc_ic_voice_search_api_mtrl_alpha);
+        holder.mDrawerIcon.setImageResource(R.drawable.ic_home);
         holder.mDrawerText.setText("Line " + position);
     }
 
