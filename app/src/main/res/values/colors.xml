@@ -12,4 +12,7 @@
     <color name="black">#000000</color>
     <color name="yellow">#FFEB3B</color>
 
+    <color name="divider_out">#B2DFDB</color>
+    <color name="divider_middle">#FFF176</color>
+
 </resources>
