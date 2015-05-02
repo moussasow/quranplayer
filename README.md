@@ -9,6 +9,12 @@ Moussa Sow
 ## Credits
 
 ## Usage
+* master branch
+* develop branch
+* feature branch
+ * feature/FEATURENAME
+ * Merge to develop
+ 
 * Coming soon
 
 ## Libraries used
