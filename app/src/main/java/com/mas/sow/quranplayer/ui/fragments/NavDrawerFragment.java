@@ -18,7 +18,7 @@ import com.mas.sow.quranplayer.ui.adapter.DrawerAdapter;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NavDrawerFragment extends Fragment {
+public class NavDrawerFragment extends BaseFragment {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
